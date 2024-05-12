@@ -1,0 +1,11 @@
+vault_address      = "http://localhost:8200"
+vault_path         = "iac-schwitzd.me"
+vault_type         = "kv-v2"
+vault_description  = "My website vault"
+auth_backend       = "token"
+entity_name        = "iac_website-user"
+entity_description = "User needed to access the local vault of my website"
+group_description  = "Group to manage access on my website vault"
+group_type         = "internal"
+token_renewable    = true
+token_no_parent    = true

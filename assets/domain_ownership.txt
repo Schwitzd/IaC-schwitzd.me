@@ -1,0 +1,13 @@
+title Domain ownership - creation & validation
+participant Cloudflare
+participant Terraform
+participant Azure
+
+Terraform->Cloudflare:Added CNAME for 'www' subdomain
+Terraform->Azure:Created 'www' custom subdomain resource
+Azure<->Cloudflare:CNAME validation for 'www' subdomain
+Terraform->Cloudflare:Added CNAME for 'root' domain
+Terraform->Azure:Created 'root' custom domain resource
+Azure->Terraform:Random generated text
+Terraform->Cloudflare: New TXT record for 'root' domain with random text
+Azure<->Cloudflare:Validate TXT record for 'root' domain
